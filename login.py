@@ -33,14 +33,15 @@ class second(QMainWindow):
         self.show()
 
     def con(self):
-        id =self.line1.text()
+        username =self.line1.text()
         password = self.line2.text()
 
-        Log.create(id=id, password=password)
+        Log.create(username=username, password=password)
 
 
 class Log(Base):
     id=PrimaryKeyField()
+    username=CharField()
     password=CharField()
 
 db.connect()
